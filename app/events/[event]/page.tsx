@@ -122,7 +122,7 @@ export default function EventDetailsPage({ params }: EventDetailPageProps) {
             Could not refresh event data: {error}
           </p>
         )}
-        <div className="w-3xl mb-10">
+        <div className="max-w-3xl flex flex-col flex-wrap mb-10">
           <h1 className="text-xl md:text-5xl font-bold">
             {eventDetails.title}
           </h1>
@@ -190,7 +190,6 @@ export default function EventDetailsPage({ params }: EventDetailPageProps) {
             {eventDetails.overview.map((item, index) => (
               <div key={index}>
                 <p>{item}</p>
-                <br />
               </div>
             ))}
           </div>

@@ -280,7 +280,7 @@ const CreateEvent = () => {
   };
 
   return (
-    <section className="my-10 text-accent">
+    <section className="my-10 text-accent ">
       <Container>
         <div className="text-2xl font-bold mb-5">
           <h2 className="text-center">Create an Event</h2>
@@ -292,10 +292,10 @@ const CreateEvent = () => {
               {submissionMessage}
             </p>
           )}
-          <FieldGroup className="bg-[#0D161A] rounded-xl p-4 mt-5 max-w-full lg:w-1/2 h-fit mx-auto">
+          <FieldGroup className="bg-[#0D161A] rounded-xl p-4 mt-5 max-w-full lg:w-1/2 h-fit mx-auto ">
             <Field>
               {eventDetails.map((detail) => (
-                <div key={detail.name} className="flex flex-col gap-y-2">
+                <div key={detail.name} className="flex flex-col text-sm lg:text-base gap-y-2">
                   <FieldLabel className="text-lg">{detail.title}</FieldLabel>
 
                   {detail.kind === "date" && (
@@ -329,13 +329,13 @@ const CreateEvent = () => {
                   )}
 
                   {detail.kind === "time" && (
-                    <InputGroup className="bg-[#182830]">
+                    <InputGroup className="bg-[#182830] ">
                       <InputGroupInput
                         name={detail.name}
                         type="time"
                         value={formData.time}
                         onChange={(event) => updateField("time", event.target.value)}
-                        className=""
+                        className="text-sm lg:text-base"
                       />
                       <InputGroupAddon>
                         {detail.icon ? <detail.icon /> : null}
@@ -362,7 +362,7 @@ const CreateEvent = () => {
                   )}
 
                   {detail.kind === "file" && (
-                    <InputGroup className="bg-[#182830] text-white">
+                    <InputGroup className="bg-[#182830] text-white text-sm lg:text-base">
                       <InputGroupInput
                         type="file"
                         accept={detail.accept}
@@ -373,7 +373,7 @@ const CreateEvent = () => {
                   )}
 
                   {detail.kind === "agenda" && (
-                    <div className="flex flex-col gap-y-3">
+                    <div className="flex flex-col gap-y-3 ">
                       <Button
                         type="button"
                         variant="secondary"
@@ -384,7 +384,7 @@ const CreateEvent = () => {
                       </Button>
                       {formData.agenda.map((item, index) => (
                         <div key={index} className="flex items-center gap-x-2">
-                          <InputGroup className="bg-[#182830] w-32 shrink-0">
+                          <InputGroup className="bg-[#182830] w-32 shrink-0 text-sm lg:text-base">
                             <InputGroupInput
                               type="time"
                               value={item.time}
@@ -394,7 +394,7 @@ const CreateEvent = () => {
                               className="py-5 text-lg"
                             />
                           </InputGroup>
-                          <InputGroup className="bg-[#182830] flex-1">
+                          <InputGroup className="bg-[#182830] flex-1 text-sm lg:text-base">
                             <InputGroupInput
                               value={item.title}
                               placeholder="Agenda item (e.g. Registration)"
@@ -421,7 +421,7 @@ const CreateEvent = () => {
                   )}
 
                   {detail.kind === "text" && (
-                    <InputGroup className="bg-[#182830]">
+                    <InputGroup className="bg-[#182830] text-sm lg:text-base">
                       <InputGroupInput
                         name={detail.name}
                         value={getFieldValue(detail.name)}
@@ -437,7 +437,7 @@ const CreateEvent = () => {
                   )}
 
                   {detail.kind === "textarea" && (
-                    <InputGroup className="bg-[#182830]">
+                    <InputGroup className="bg-[#182830] text-sm lg:text-base">
                       <InputGroupTextarea
                         name={detail.name}
                         value={getFieldValue(detail.name)}
